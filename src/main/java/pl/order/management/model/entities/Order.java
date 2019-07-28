@@ -1,16 +1,33 @@
 package pl.order.management.model.entities;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-
+@Entity
+@Table(name = "orders")
 public class Order {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(nullable = false)
     private String title;
+
+    @Column(columnDefinition = "TEXT")
     private String description;
+
+    @Column
     private Status status;
+
+    @ManyToOne
     private User userId;
+
+    @Column
     private Department departmentId;
+
+    @Column
     private LocalDateTime dateTime;
 
 
