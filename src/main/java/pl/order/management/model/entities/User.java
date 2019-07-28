@@ -89,7 +89,7 @@ public class User {
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("User{");
+        final StringBuilder sb = new StringBuilder("User{");
         sb.append("id=").append(id);
         sb.append(", username='").append(username).append('\'');
         sb.append(", firstName='").append(firstName).append('\'');
