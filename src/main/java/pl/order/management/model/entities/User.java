@@ -1,16 +1,30 @@
 package pl.order.management.model.entities;
 
+import javax.persistence.*;
 import java.util.Objects;
 
+@Entity
+@Table(name = "users")
 public class User {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(unique = true, nullable = false)
     private String username;
+    @Column(nullable = false)
+    private String password;
+    @Column(name = "first_name")
     private String firstName;
+    @Column(name = "last_name")
     private String lastName;
+    @OneToOne
     private Department departmentId;
+    @Column
     private String eMail;
+    @Column(nullable = false)
     private Boolean active;
+    @OneToOne
     private Position positionId;
 
     public Long getId() {
@@ -23,6 +37,14 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getFirstName() {
@@ -92,6 +114,7 @@ public class User {
         final StringBuilder sb = new StringBuilder("User{");
         sb.append("id=").append(id);
         sb.append(", username='").append(username).append('\'');
+        sb.append(", password='").append(password).append('\'');
         sb.append(", firstName='").append(firstName).append('\'');
         sb.append(", lastName='").append(lastName).append('\'');
         sb.append(", departmentId=").append(departmentId);
