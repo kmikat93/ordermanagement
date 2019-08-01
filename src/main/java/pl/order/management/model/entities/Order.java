@@ -18,11 +18,13 @@ public class Order {
     @Column(columnDefinition = "TEXT")
     private String description;
 
+    @ManyToOne
     private Status status;
 
     @ManyToOne
     private User userId;
 
+    @ManyToOne
     private Department departmentId;
 
     private LocalDateTime dateTime;
