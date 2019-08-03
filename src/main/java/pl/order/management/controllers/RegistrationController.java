@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import pl.order.management.model.entities.Department;
 import pl.order.management.model.entities.Position;
 import pl.order.management.model.entities.User;
+import pl.order.management.model.repositories.DepartmentRepository;
+import pl.order.management.model.repositories.PositionRepository;
 import pl.order.management.model.repositories.UserRepository;
 
 @Controller
@@ -16,16 +18,24 @@ public class RegistrationController {
 
     private UserRepository userRepository;
     private PasswordEncoder passwordEncoder;
+    private PositionRepository positionRepository;
+    private DepartmentRepository departmentRepository;
 
     @Autowired
-    public RegistrationController(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+    public RegistrationController(UserRepository userRepository, PasswordEncoder passwordEncoder, PositionRepository positionRepository, DepartmentRepository departmentRepository) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
+        this.positionRepository = positionRepository;
+        this.departmentRepository = departmentRepository;
     }
+
+
+
 
 
     @GetMapping
     public String prepareRegistrationPage(){
+
         return "registration-form";
     }
 
@@ -45,8 +55,8 @@ public class RegistrationController {
         user.setLastName(lastName);
         user.seteMail(eMail);
         user.setActive(true);
-        user.setDepartmentId(new Department());
-        user.setPositionId(new Position(position));
+        user.setDepartmentId(departmentRepository.findDepartmentByDepartments(department));
+        user.setPositionId(positionRepository.findPositionByPositions(position));
 
         userRepository.save(user);
 

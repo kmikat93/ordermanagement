@@ -17,6 +17,7 @@ public class OrderController {
 
     private OrderRepository orderRepository;
     private UserRepository userRepository;
+    private StatusRepository statusRepository;
 
     @GetMapping
     public String prepareNewOrderPage() {
@@ -32,7 +33,7 @@ public class OrderController {
 
         order.setTitle(title);
         order.setDescription(description);
-        order.setStatus(new Status("Active"));
+        order.setStatus(statusRepository.findStatusByStatus("Active"));
         order.setUserId(userRepository.findUserByUsername(userName));
         order.setDepartmentId(new Department());
 

@@ -12,8 +12,7 @@ public class Status {
     @Column(nullable = false, columnDefinition = "TEXT")
     private String status;
 
-    public Status(String status) {
-        this.status = status;
+    public Status() {
     }
 
     public Long getId() {
