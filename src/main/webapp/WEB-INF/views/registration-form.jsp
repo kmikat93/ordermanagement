@@ -1,0 +1,1 @@
+//TODO wstawić zawartość formularza rejestracji z metodą POST
