@@ -7,6 +7,8 @@ import pl.order.management.model.entities.Department;
 import java.util.List;
 
 @Repository
-public interface DepartmentRepository extends JpaRepository<Department,Long> {
-// TODO możliwe do usunięcia
+public interface DepartmentRepository extends JpaRepository<Department, Long> {
+
+    List<Department> findAllByDepartmentOrderByDepartmentAsc(String department);
+
 }

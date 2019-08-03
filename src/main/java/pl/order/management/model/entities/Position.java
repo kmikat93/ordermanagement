@@ -14,6 +14,9 @@ public class Position {
     @Column(nullable = false, columnDefinition = "TEXT")
     private String positions;
 
+    public Position() {
+    }
+
     public Position(String positions) {
         this.positions = positions;
     }
