@@ -1,0 +1,40 @@
+body{
+    background-color: #fafafa;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    padding-right: 0%;
+    padding-bottom: 0%;
+}
+
+header {
+    background-color: white;
+    padding: 1%;
+}
+
+form{
+    margin-top: 4%;
+}
+
+select > option{
+    height: 10vh;
+}
+
+select{
+    min-width: 100%;
+    min-height: 6vh;
+}
+
+.button-property{
+    margin-top: 10%;
+}
+.button-submit{
+    width: 85.23px;
+}
+
+footer{
+    width: 100%;
+    background-color: #dededed0;
+    padding: 0.5%;
+    margin-top: 5%;
+    bottom: 0px;
+}
