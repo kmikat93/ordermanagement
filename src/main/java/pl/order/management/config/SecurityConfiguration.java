@@ -29,6 +29,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/login").anonymous()
                 .antMatchers("/department").anonymous()
                 .antMatchers("/position").anonymous()
+                .antMatchers("/status").anonymous()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
