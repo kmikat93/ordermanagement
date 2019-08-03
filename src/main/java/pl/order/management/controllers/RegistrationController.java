@@ -52,6 +52,7 @@ public class RegistrationController {
 
         return "redirect:/";
 
-
+//registerform DTO i po id wyrzucanie danych
+        // service narzucić datę na now
     }
 }
