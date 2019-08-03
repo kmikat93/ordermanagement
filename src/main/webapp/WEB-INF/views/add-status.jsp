@@ -11,7 +11,7 @@
 <body>
 //TODO lista ze wszystkimi statusami pobranymi z bazy
 <form method="post" action="/status">
-    Wpisz nazwe stanowiska: <input type="text" name="name" id="name"><br>
+    Wpisz nazwe statusu: <input type="text" name="name" id="name"><br>
 
     <button type="submit">Zarejestruj!</button>
     <sec:csrfInput/>
