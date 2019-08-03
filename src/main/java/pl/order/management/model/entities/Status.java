@@ -10,25 +10,29 @@ public class Status {
     private Long id;
 
     @Column(nullable = false, columnDefinition = "TEXT")
-    private String statuses;
+    private String status;
+
+    public Status(String status) {
+        this.status = status;
+    }
 
     public Long getId() {
         return id;
     }
 
-    public String getStatuses() {
-        return statuses;
+    public String getStatus() {
+        return status;
     }
 
-    public void setStatus(String statuses) {
-        this.statuses = statuses;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @Override
     public String toString() {
         return "Status{" +
                 "id=" + id +
-                ", status='" + statuses + '\'' +
+                ", status='" + status + '\'' +
                 '}';
     }
 }

@@ -12,6 +12,10 @@ public class Department {
     @Column(nullable = false, columnDefinition = "TEXT")
     private String departments;
 
+    public Department(String departments) {
+        this.departments = departments;
+    }
+
     public Long getId() {
         return id;
     }
