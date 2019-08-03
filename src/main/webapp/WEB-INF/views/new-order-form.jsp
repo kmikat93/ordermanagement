@@ -1,1 +1,1 @@
-//TODO tutaj wstawić formulaz nowego zamowienia z metodą POST
+//TODO tutaj wstawić formularz nowego zamowienia z metodą POST
