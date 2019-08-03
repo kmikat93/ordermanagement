@@ -35,8 +35,8 @@ public class RegistrationController {
                                            String firstName,
                                            String lastName,
                                            String eMail,
-                                           Department department,
-                                           Position position){
+                                           String department,
+                                           String position){
         User user = new User();
 
         user.setUsername(userName);
@@ -45,8 +45,8 @@ public class RegistrationController {
         user.setLastName(lastName);
         user.seteMail(eMail);
         user.setActive(true);
-        user.setDepartmentId(department);
-        user.setPositionId(position);
+        user.setDepartmentId(new Department());
+        user.setPositionId(new Position(position));
 
         userRepository.save(user);
 

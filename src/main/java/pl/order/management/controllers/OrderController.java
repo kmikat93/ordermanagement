@@ -34,7 +34,7 @@ public class OrderController {
         order.setDescription(description);
         order.setStatus(new Status("Active"));
         order.setUserId(userRepository.findUserByUsername(userName));
-        order.setDepartmentId(new Department(department));
+        order.setDepartmentId(new Department());
 
         orderRepository.save(order);
 
