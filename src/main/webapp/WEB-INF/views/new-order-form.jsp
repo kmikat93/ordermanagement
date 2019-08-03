@@ -19,10 +19,10 @@
         <img src="../../../resources/wsb.jpg" alt="Logo Wyższej szkoły Bankowej">
     </header>
     <nav class="navbar navbar-dark bg-primary navbar-expand-md">
-        <a class="navbar-brand mr-8" href="plTabUser.html">WSB</a>
+        <a class="navbar-brand mr-8" href="user-orders-page">WSB</a>
         <div id="main-menu" class="collapse navbar-collapse">
             <ul class="navbar-nav ml-4 mr-auto">
-                <li class="nav-item "><a class="nav-link" href="plTabUser.html"> Ogłoszenia mojego działu</a></li>
+                <li class="nav-item "><a class="nav-link" href="user-orders-page"> Ogłoszenia mojego działu</a></li>
                 <li class="nav-item "><a class="nav-link" href="#"> Moje ogłoszenia</a></li>
             </ul>
             <ul class="navbar-nav ">
@@ -33,7 +33,7 @@
     </nav>
     <div class="container">
         <main class="row">
-            <form action="plTabUser.html" method="POST" class="col-md-5 offset-md-3">
+            <form action="user-orders-page" method="POST" class="col-md-5 offset-md-3">
                 <div class="form-group">
                     <label for="title">Tytuł:</label>
                     <input type="text" class="form-control" id="title" name="title" placeholder="Tytuł">

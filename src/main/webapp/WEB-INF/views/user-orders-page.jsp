@@ -11,21 +11,18 @@
     <meta name="author" content="Katarzyna Kmieć, Michał Motyka, Kamil Janiak">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="user-orders-page-look.css" type="text/css">
-    <link rel="shortcut icon" href="img/favicon-96x96.png" type="image/png">
+    <link rel="shortcut icon" href="../../../resources/favicon-96x96.png" type="image/png">
     <title>WSB - User's document</title>
 </head>
 <body>
     <header>
-        <img src="img/wsb-wroclaw-akademia-internetu-test3 copy.jpg" alt="Logo Wyższej szkoły Bankowej">
+        <img src="../../../resources/wsb.jpg" alt="Logo Wyższej szkoły Bankowej">
     </header>
     <nav class="navbar navbar-dark bg-primary navbar-expand-md">
-        <a class="navbar-brand mr-8" href="#">WSB</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-label="Przełącznik nawigacyjny" aria-expanded="false">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <a class="navbar-brand mr-8" href="user-orders-page">WSB</a>
         <div id="main-menu" class="collapse navbar-collapse">
             <ul class="navbar-nav ml-4 mr-auto">
-                <li class="nav-item "><a class="nav-link" href="plAddOrder.html"> Dodaj</a></li>
+                <li class="nav-item "><a class="nav-link" href="new-order-form"> Dodaj</a></li>
                 <li class="nav-item "><a class="nav-link" href="#"> Ogłoszenia mojego działu</a></li>
                 <li class="nav-item "><a class="nav-link" href="#"> Moje ogłoszenia</a></li>
             </ul>
