@@ -1,4 +1,5 @@
 package pl.order.management.model.repositories;
 
-public class StatusRepository {
+public interface StatusRepository {
+    // TODO możliwe do usunięcia
 }
