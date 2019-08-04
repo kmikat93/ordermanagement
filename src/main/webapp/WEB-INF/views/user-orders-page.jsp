@@ -20,16 +20,16 @@
         <img src="${pageContext.request.contextPath}/static/wsb.jpg" alt="Logo Wyższej szkoły Bankowej">
     </header>
     <nav class="navbar navbar-dark bg-primary navbar-expand-md">
-        <a class="navbar-brand mr-8" href="user-orders-page">WSB</a>
+        <a class="navbar-brand mr-8" href="/">WSB</a>
         <div id="main-menu" class="collapse navbar-collapse">
             <ul class="navbar-nav ml-4 mr-auto">
-                <li class="nav-item "><a class="nav-link" href="new-order-form"> Dodaj</a></li>
-                <li class="nav-item "><a class="nav-link" href="#"> Ogłoszenia mojego działu</a></li>
-                <li class="nav-item "><a class="nav-link" href="#"> Moje ogłoszenia</a></li>
+                <li class="nav-item "><a class="nav-link" href="/add-order"> Dodaj</a></li>
+                <li class="nav-item "><a class="nav-link" href="department-orders-page"> Ogłoszenia mojego działu</a></li>
+                <li class="nav-item "><a class="nav-link" href="user-orders-page"> Moje ogłoszenia</a></li>
             </ul>
             <ul class="navbar-nav">
-                <li class="nav-item "><a class="nav-link" href="#"> Zalogowany jest: </a></li>
-                <li class="nav-item "><a class="nav-link" href="#"> Wyloguj</a></li>
+                <li class="nav-item "><a class="nav-link" href="#"> Zalogowany jest: ${username}</a></li>
+                <li class="nav-item "><a class="nav-link" href="/logout"> Wyloguj</a></li>
             </ul>
         </div>
     </nav>
