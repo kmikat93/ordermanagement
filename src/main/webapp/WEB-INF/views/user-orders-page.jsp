@@ -1,5 +1,6 @@
 // TODO tu bedzie widok ogloszen wstawionych przez konkretnego uzytkownika
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="pl_PL">
 <head>
@@ -36,49 +37,31 @@
         <main class="row">
             <table class="col-md-12 table-striped main-table">
                 <thead>
-                <tr class="table_rows">
-                    <th class="table_heading">Lp.</th>
-                    <th class="table_heading">Tytuł</th>
-                    <th class="table_heading">Opis zamówienia</th>
-                    <th class="table_heading">Status</th>
-                    <th class="table_heading">Osoba zamawiająca</th>
-                    <th class="table_heading">Data utworzenia</th>
-                </tr>
+                    <tr class="table_rows">
+                        <th class="table_heading">Lp.</th>
+                        <th class="table_heading">Tytuł</th>
+                        <th class="table_heading">Opis zamówienia</th>
+                        <th class="table_heading">Status</th>
+                        <th class="table_heading">Osoba zamawiająca</th>
+                        <th class="table_heading">Departament</th>
+                        <th class="table_heading">Data utworzenia</th>
+                    </tr>
                 </thead>
+                <c:if test="${orders} != null">
                 <tbody>
-                <tr class="table_rows">
-                    <td class="table_cell">0001</td>
-                    <td class="table_cell"><a href="#" class="table_title">Zamówienie z archiwum X</a></td>
-                    <td class="table_cell">Ołówki 5 szt., papier 3 ryzy, pióro - stare. Ołówki 5 szt., papier 3 ryzy, pióro - stare. Ołówki 5 szt., papier 3 ryzy, pióro - stare</td>
-                    <td class="table_cell">Otwarte</td>
-                    <td class="table_cell">Kamil Janiak</td>
-                    <td class="table_cell">2/08/2019</td>
-                </tr>
-                <tr class="table_rows">
-                    <td>0002</td>
-                    <td>Pilne! Pilne!</td>
-                    <td>papier toaletowy - choćby 1 listek</td>
-                    <td>Otwarte</td>
-                    <td>Kaczor Donald</td>
-                    <td>3/08/2019</td>
-                </tr>
-                <tr class="table_rows">
-                    <td>0003</td>
-                    <td>Impreza</td>
-                    <td>otwieracz do piwa 1 szt., kubki 5 szt., zapoja 1 szt., </td>
-                    <td>Aktywne</td>
-                    <td>Kasia Kmieć</td>
-                    <td>4/08/2019</td>
-                </tr>
-                <tr class="table_rows">
-                    <td>0004</td>
-                    <td>Kupię dobrę strone internetową</td>
-                    <td>kup dobrą stronę www z springiem, hibernatem i czymś dobrym</td>
-                    <td>Zamknięte</td>
-                    <td>Haker</td>
-                    <td>25/07/2019</td>
-                </tr>
+                    <c:forEach var="orders" items="${orders}">
+                        <tr class="table_rows">
+                            <td class="table_cell">${orders.id}</td>
+                            <td class="table_cell"><a href="#" class="table_title">${orders.title}</a></td>
+                            <td class="table_cell">${orders.description}</td>
+                            <td class="table_cell">${orders.status}</td>
+                            <td class="table_cell">${orders.userId}</td>
+                            <td class="table_cell">${orders.departmentId}</td>
+                            <td class="table_cell">${orders.dateTime}</td>
+                        </tr>
+                    </c:forEach>
                 </tbody>
+                </c:if>
             </table>
         </main>
     </div>
