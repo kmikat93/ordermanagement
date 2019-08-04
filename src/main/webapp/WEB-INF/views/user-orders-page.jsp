@@ -29,7 +29,7 @@
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item "><a class="nav-link" href="#"> Zalogowany jest: </a></li>
-                <li class="nav-item "><a class="nav-link" href="#"> Wyloguj</a></li>
+                <li class="nav-item "><a class="nav-link" href="home-page-logout"> Wyloguj</a></li>
             </ul>
         </div>
     </nav>
