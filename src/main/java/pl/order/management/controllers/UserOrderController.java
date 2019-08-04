@@ -23,6 +23,7 @@ public class UserOrderController {
         String username = principal.getName();
         List<Order> orders = orderRepository.findAllByUserIdUsernameOrderByDateTime(username);
         model.addAttribute("orders", orders);
+        model.addAttribute("username", username);
         return "user-orders-page";
     }
 }

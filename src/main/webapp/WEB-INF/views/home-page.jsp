@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html lang="pl_PL">
 <head>
@@ -21,15 +22,27 @@
 <nav class="navbar navbar-dark bg-primary navbar-expand-md">
     <a class="navbar-brand mr-8" href="user-orders-page">WSB</a>
     <div id="main-menu" class="collapse navbar-collapse">
-        <ul class="navbar-nav ml-4 mr-auto">
-            <li class="nav-item "><a class="nav-link" href="new-order-form"> Dodaj</a></li>
-            <li class="nav-item "><a class="nav-link" href="#"> Ogłoszenia mojego działu</a></li>
-            <li class="nav-item "><a class="nav-link" href="#"> Moje ogłoszenia</a></li>
-        </ul>
-        <ul class="navbar-nav">
-            <li class="nav-item "><a class="nav-link" href="#"> Zalogowany jest: </a></li>
-            <li class="nav-item "><a class="nav-link" href="#"> Wyloguj</a></li>
-        </ul>
+        <sec:authorize access="isAuthenticated()">
+            <ul class="navbar-nav ml-4 mr-auto">
+                <li class="nav-item "><a class="nav-link" href="/add-order">Dodaj zamówienie</a></li>
+                <li class="nav-item "><a class="nav-link" href="#"> Ogłoszenia mojego działu</a></li>
+                <li class="nav-item "><a class="nav-link" href="#"> Moje zamówienia</a></li>
+                <li class="nav-item "><a class="nav-link" href="/announcement"> Dodaj ogłoszenie</a></li>
+                <li class="nav-item "><a class="nav-link" href="#"> Zalogowany jest: ######</a></li>
+                <li class="nav-item "><a class="nav-link" href="/logout"> Wyloguj</a></li>
+            </ul>
+            </ul>
+        </sec:authorize>
+
+
+        <sec:authorize access="!isAuthenticated()">
+            <ul class="navbar-nav">
+                <li class="nav-item "><a class="nav-link" href="/register">Zarejestruj się</a></li>
+                <li class="nav-item "><a class="nav-link" href="/login">Zaloguj</a></li>
+            </ul>
+        </sec:authorize>
+
+
     </div>
 </nav>
 <div class="container">
