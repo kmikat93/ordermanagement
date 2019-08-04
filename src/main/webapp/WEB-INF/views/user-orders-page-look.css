@@ -1,0 +1,43 @@
+body{
+    background-color: #fafafa;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    padding-right: 0%;
+    padding-bottom: 0%;
+}
+
+header {
+    background-color: white;
+    padding: 1%;
+}
+
+.main-table{
+    margin-top: 4%;
+}
+
+.table_cell{
+    padding: 5px;
+}
+
+.table_heading{
+    text-align: center;
+}
+
+tr > th:nth-child(3){
+    max-width: 10vh;
+}
+
+.table_heading:nth-child(4), th:nth-child(5){
+    min-width: 10vh;
+}
+.table_title{
+    color: black;
+}
+
+footer{
+    width: 100%;
+    background-color: #dededed0;
+    padding: 0.5%;
+    margin-top: 5%;
+    bottom: 0px;
+}
