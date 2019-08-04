@@ -24,12 +24,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/").permitAll()
+                .antMatchers("/**").permitAll()
                 .antMatchers("/register").anonymous()
                 .antMatchers("/login").anonymous()
                 .antMatchers("/department").anonymous()
                 .antMatchers("/position").anonymous()
                 .antMatchers("/status").anonymous()
+                .antMatchers("/add-order").anonymous()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()

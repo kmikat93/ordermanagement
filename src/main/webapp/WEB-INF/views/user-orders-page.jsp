@@ -10,13 +10,13 @@
     <meta name="keywords" content="documents, order">
     <meta name="author" content="Katarzyna Kmieć, Michał Motyka, Kamil Janiak">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="user-orders-page-look.css" type="text/css">
-    <link rel="shortcut icon" href="../../../resources/favicon-96x96.png" type="image/png">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/user-orders-page-look.css" type="text/css">
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/static/favicon-96x96.png" type="image/png">
     <title>WSB - User's document</title>
 </head>
 <body>
     <header>
-        <img src="../../../resources/wsb.jpg" alt="Logo Wyższej szkoły Bankowej">
+        <img src="${pageContext.request.contextPath}/static/wsb.jpg" alt="Logo Wyższej szkoły Bankowej">
     </header>
     <nav class="navbar navbar-dark bg-primary navbar-expand-md">
         <a class="navbar-brand mr-8" href="user-orders-page">WSB</a>
