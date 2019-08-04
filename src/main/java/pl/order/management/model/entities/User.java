@@ -124,4 +124,6 @@ public class User {
         sb.append('}');
         return sb.toString();
     }
+
+    //TODO refactor position na occupation
 }

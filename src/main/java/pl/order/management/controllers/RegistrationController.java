@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pl.order.management.model.entities.Department;
 import pl.order.management.model.entities.Position;
@@ -11,6 +12,8 @@ import pl.order.management.model.entities.User;
 import pl.order.management.model.repositories.DepartmentRepository;
 import pl.order.management.model.repositories.PositionRepository;
 import pl.order.management.model.repositories.UserRepository;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/register")
@@ -34,7 +37,9 @@ public class RegistrationController {
 
 
     @GetMapping
-    public String prepareRegistrationPage(){
+    public String prepareRegistrationPage(Model model){
+        List<Department> allDepartmentsOrderById = departmentRepository.findAllByOrderById();
+        model.addAttribute("departments", allDepartmentsOrderById);
 
         return "registration-form";
     }
