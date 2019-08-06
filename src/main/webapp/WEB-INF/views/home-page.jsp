@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+
 <!DOCTYPE html>
 <html lang="pl_PL">
 <head>
@@ -16,96 +17,60 @@
     <title>WSB - Home page</title>
 </head>
 <body>
-<header>
-    <img src="${pageContext.request.contextPath}/static/wsb.jpg" alt="Logo Wyższej szkoły Bankowej">
+<header id="school-logo">
+    <a href="/"><img src="img/wsb-wroclaw-akademia-internetu-test3 copy.jpg" alt="Logo Wyższej szkoły bankowej"></a>
 </header>
 <nav class="navbar navbar-dark bg-primary navbar-expand-md">
-    <a class="navbar-brand mr-8" href="user-orders-page">WSB</a>
+    <a class="navbar-brand mr-8" href="/">WSB</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-label="Przełącznik nawigacyjny" aria-expanded="false">
+        <span class="navbar-toggler-icon"></span>
+    </button>
     <div id="main-menu" class="collapse navbar-collapse">
-        <sec:authorize access="isAuthenticated()">
-            <ul class="navbar-nav ml-4 mr-auto">
-                <li class="nav-item "><a class="nav-link" href="/add-order">Dodaj zamówienie</a></li>
-                <li class="nav-item "><a class="nav-link" href="#"> Ogłoszenia mojego działu</a></li>
-                <li class="nav-item "><a class="nav-link" href="#"> Moje zamówienia</a></li>
-                <li class="nav-item "><a class="nav-link" href="/announcement"> Dodaj ogłoszenie</a></li>
-                <li class="nav-item "><a class="nav-link" href="#"> Zalogowany jest: ######</a></li>
-                <li class="nav-item "><a class="nav-link" href="/logout"> Wyloguj</a></li>
-            </ul>
-            </ul>
+
+        <!-- To co widzi użytkownik, gdy JEST sie zalogowanym -->
+        <!--<sec:authorize access="isAuthenticated()"> -->
+        <ul class="navbar-nav ml-4 mr-auto">
+            <li class="nav-item"><a class="nav-link" href="/announcement"> Dodaj ogłoszenie</a></li>
+            <li class="nav-item"><a class="nav-link" href="/add-order">Dodaj zamówienie</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Moje zamówienia</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Zamówienia mojego działu</a></li>
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="#"> Zalogowany jest: ${username}</a></li>
+            <li class="nav-item"><a class="nav-link" href="/logout"> Wyloguj</a></li>
+        </ul>
         </sec:authorize>
 
-
+        <!-- To co widzi użytkownik, gdy NIE jest sie zalogowanym -->
         <sec:authorize access="!isAuthenticated()">
             <ul class="navbar-nav">
-                <li class="nav-item "><a class="nav-link" href="/register">Zarejestruj się</a></li>
-                <li class="nav-item "><a class="nav-link" href="/login">Zaloguj</a></li>
+                <li class="nav-item"><a class="nav-link" href="/register">Zarejestruj się</a></li>
+                <li class="nav-item"><a class="nav-link" href="/login">Zaloguj</a></li>
             </ul>
         </sec:authorize>
-
-
     </div>
 </nav>
 <div class="container">
-    <ul>
-        <c:forEach items="${announcements}" var="announcement" varStatus="varStatus">
-            <li>${varStatus.count} ${announcement.title} ${announcement.description}</li>
-        </c:forEach>
-    </ul>
-</div>
-
-<!--
-<div class="container">
     <main class="row">
-        <table class="col-md-12 table-striped main-table">
-            <thead>
-            <tr class="table_rows">
-                <th class="table_heading">Lp.</th>
-                <th class="table_heading">Tytuł</th>
-                <th class="table_heading">Opis zamówienia</th>
-                <th class="table_heading">Status</th>
-                <th class="table_heading">Osoba zamawiająca</th>
-                <th class="table_heading">Data utworzenia</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr class="table_rows">
-                <td class="table_cell">0001</td>
-                <td class="table_cell"><a href="#" class="table_title">Zamówienie z archiwum X</a></td>
-                <td class="table_cell">Ołówki 5 szt., papier 3 ryzy, pióro - stare. Ołówki 5 szt., papier 3 ryzy, pióro - stare. Ołówki 5 szt., papier 3 ryzy, pióro - stare</td>
-                <td class="table_cell">Otwarte</td>
-                <td class="table_cell">Kamil Janiak</td>
-                <td class="table_cell">2/08/2019</td>
-            </tr>
-            <tr class="table_rows">
-                <td>0002</td>
-                <td>Pilne! Pilne!</td>
-                <td>papier toaletowy - choćby 1 listek</td>
-                <td>Otwarte</td>
-                <td>Kaczor Donald</td>
-                <td>3/08/2019</td>
-            </tr>
-            <tr class="table_rows">
-                <td>0003</td>
-                <td>Impreza</td>
-                <td>otwieracz do piwa 1 szt., kubki 5 szt., zapoja 1 szt., </td>
-                <td>Aktywne</td>
-                <td>Kasia Kmieć</td>
-                <td>4/08/2019</td>
-            </tr>
-            <tr class="table_rows">
-                <td>0004</td>
-                <td>Kupię dobrę strone internetową</td>
-                <td>kup dobrą stronę www z springiem, hibernatem i czymś dobrym</td>
-                <td>Zamknięte</td>
-                <td>Haker</td>
-                <td>25/07/2019</td>
-            </tr>
-            </tbody>
-        </table>
+        <!-- Drawing column whit announcements -->
+        <c:if test="${announcements} != null">
+        <section class="col-8 offset-2 main">
+            <c:forEach var="announcement" items="${announcements}">
+                <article class="article-advert">
+                    <div>
+                        <h6 class="article-title">${announcement.title} </h6>
+                        <p class="article-text">${announcement.description} </p>
+                    </div>
+                    <div class="article-sign">
+                        <cite class="font-weight-light sign">Kamil Janiak 12/02/2015</cite>
+                    </div>
+                    <hr>
+                </article>
+            </c:forEach>
+        </section>
+        </c:if>
     </main>
 </div>
--->
-
 <footer>
     <div>
         <p>@Copyrights for authors</p>

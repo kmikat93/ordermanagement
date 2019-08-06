@@ -16,14 +16,19 @@
 </head>
 <body>
     <header>
-        <img src="${pageContext.request.contextPath}/static/wsb.jpg" alt="Logo Wyższej szkoły Bankowej">
+        <a href="/"><img src="${pageContext.request.contextPath}/static/wsb.jpg" alt="Logo Wyższej szkoły bankowej"></a>
     </header>
     <nav class="navbar navbar-dark bg-primary navbar-expand-md">
         <a class="navbar-brand mr-8" href="/">WSB</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-label="Przełącznik nawigacyjny" aria-expanded="false">
+            <span class="navbar-toggler-icon"></span>
+        </button>
         <div id="main-menu" class="collapse navbar-collapse">
             <ul class="navbar-nav ml-4 mr-auto">
-                <li class="nav-item "><a class="nav-link" href="department-orders-page"> Ogłoszenia mojego działu</a></li>
-                <li class="nav-item "><a class="nav-link" href="user-orders-page"> Moje ogłoszenia</a></li>
+                <li class="nav-item"><a class="nav-link" href="/announcement"> Dodaj ogłoszenie</a></li>
+                <li class="nav-item active"><a class="nav-link" href="/add-order">Dodaj zamówienie</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Moje zamówienia</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Zamówienia mojego działu</a></li>
             </ul>
             <ul class="navbar-nav ">
                 <li class="nav-item "><a class="nav-link" href="#"> Zalogowany jest: </a></li>

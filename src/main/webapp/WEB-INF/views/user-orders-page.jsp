@@ -13,19 +13,23 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/user-orders-page-look.css" type="text/css">
     <link rel="shortcut icon" href="${pageContext.request.contextPath}/static/favicon-96x96.png" type="image/png">
-    <title>WSB - User's document</title>
+    <title>WSB - User's orders</title>
 </head>
 <body>
     <header>
-        <img src="${pageContext.request.contextPath}/static/wsb.jpg" alt="Logo Wyższej szkoły Bankowej">
+        <a href="/"><img src="${pageContext.request.contextPath}/static/wsb.jpg" alt="Logo Wyższej szkoły Bankowej"></a>
     </header>
     <nav class="navbar navbar-dark bg-primary navbar-expand-md">
         <a class="navbar-brand mr-8" href="/">WSB</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-label="Przełącznik nawigacyjny" aria-expanded="false">
+            <span class="navbar-toggler-icon"></span>
+        </button>
         <div id="main-menu" class="collapse navbar-collapse">
             <ul class="navbar-nav ml-4 mr-auto">
-                <li class="nav-item "><a class="nav-link" href="/add-order"> Dodaj</a></li>
-                <li class="nav-item "><a class="nav-link" href="department-orders-page"> Ogłoszenia mojego działu</a></li>
-                <li class="nav-item "><a class="nav-link" href="user-orders-page"> Moje ogłoszenia</a></li>
+                <li class="nav-item"><a class="nav-link" href="/announcement"> Dodaj ogłoszenie</a></li>
+                <li class="nav-item"><a class="nav-link" href="/add-order">Dodaj zamówienie</a></li>
+                <li class="nav-item active"><a class="nav-link" href="#">Moje zamówienia</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Zamówienia mojego działu</a></li>
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item "><a class="nav-link" href="#"> Zalogowany jest: ${username}</a></li>
@@ -35,7 +39,7 @@
     </nav>
     <div class="container">
         <main class="row">
-            <table class="col-md-12 table-striped main-table">
+            <table class="col-md-12 table-striped main">
                 <thead>
                     <tr class="table_rows">
                         <th class="table_heading">Lp.</th>
@@ -53,7 +57,7 @@
                         <tr class="table_rows">
                             <td class="table_cell">${orders.id}</td>
                             <td class="table_cell"><a href="#" class="table_title">${orders.title}</a></td>
-                            <td class="table_cell">${orders.description}</td>
+                            <td class="table_cell"><span class="table_description">${orders.description}</span></td>
                             <td class="table_cell">${orders.status}</td>
                             <td class="table_cell">${orders.userId}</td>
                             <td class="table_cell">${orders.departmentId}</td>

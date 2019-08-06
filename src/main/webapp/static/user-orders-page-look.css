@@ -11,7 +11,7 @@ header {
     padding: 1%;
 }
 
-.main-table{
+.main{
     margin-top: 4%;
 }
 
@@ -30,8 +30,17 @@ tr > th:nth-child(3){
 .table_heading:nth-child(4), th:nth-child(5){
     min-width: 10vh;
 }
+
 .table_title{
     color: black;
+}
+
+.table_title::first-letter{
+    text-transform: uppercase;
+}
+
+.table_description::first-letter{
+    text-transform: uppercase;
 }
 
 footer{

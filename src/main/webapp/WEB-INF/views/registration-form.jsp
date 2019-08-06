@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="pl_PL">
 <head>
@@ -17,15 +18,14 @@
 </head>
 <body>
 <header>
-    <img src="${pageContext.request.contextPath}/static/wsb.jpg" alt="Logo Wyższej szkoły Bankowej">
+    <a href="/"><img src="${pageContext.request.contextPath}/static/wsb.jpg" alt="Logo Wyższej szkoły bankowej"></a>
 </header>
 <nav class="navbar navbar-dark bg-primary navbar-expand-md">
     <a class="navbar-brand mr-8" href="plTabUser.html">WSB - kieruj do home-page-logged</a>
-    <!--
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-label="Przełącznik nawigacyjny" aria-expanded="false">
         <span class="navbar-toggler-icon"></span>
     </button>
-    -->
+
     <div id="main-menu" class="collapse navbar-collapse">
         <ul class="navbar-nav ml-4 mr-auto">
         </ul>
@@ -33,8 +33,6 @@
 </nav>
 <div class="container">
     <main class="row">
-
-
         <form action="home-page" method="POST" class="col-md-5 offset-md-3">
             <h1 class="col-md-5 offset-md-3">Registration</h1>
             <div class="form-registration">
@@ -55,7 +53,7 @@
             </div>
             <div class="form-registration">
                 <label for="eMail">e-mail</label>
-                <input class="form-control" id="eMail" name="eMail" placeholder="">
+                <input class="form-control" id="eMail" name="eMail" type="email" placeholder="">
             </div>
             <div class="form-registration">
                 <!--<style="min-width: 100%"> -->
