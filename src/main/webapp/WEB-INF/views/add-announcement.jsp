@@ -58,7 +58,7 @@
 </div>
 <footer>
     <div>
-        <p>@Copyrights for authors</p>
+        @Copyrights for authors
     </div>
 </footer>
 
