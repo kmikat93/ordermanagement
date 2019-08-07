@@ -1,5 +1,6 @@
-//TODO tutaj wstawić formularz nowego zamowienia z metodą POST
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+
 <!DOCTYPE html>
 <html lang="pl_PL">
 <head>
@@ -45,7 +46,7 @@
                 </div>
                 <div class="form-group">
                     <label for="description">Treść zamówienia:</label>
-                    <textarea class="form-control" id="description" name="description" placeholder="Tutaj możesz dodać swoje ogłoszenie" maxlength="200"></textarea>
+                    <textarea class="form-control" id="description" name="description" placeholder="Tutaj możesz dodać swoje zamówienie" maxlength="200"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="departments">Dział:</label><br>
@@ -61,6 +62,7 @@
                     <button type="submit" class="btn btn-primary button-submit">Wyślij</button>
                     <button type="reset" class="btn btn-secondary">Wyczyść</button>
                 </div>
+                <sec:csrfInput/>
             </form>
         </main>
     </div>

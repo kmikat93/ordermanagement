@@ -12,13 +12,13 @@
     <meta name="keywords" content="documents, order">
     <meta name="author" content="Katarzyna Kmieć, Michał Motyka, Kamil Janiak">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/user-orders-page-look.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/home-page-look.css" type="text/css">
     <link rel="shortcut icon" href="${pageContext.request.contextPath}/static/favicon-96x96.png" type="image/png">
     <title>WSB - Home page</title>
 </head>
 <body>
 <header id="school-logo">
-    <a href="/"><img src="img/wsb-wroclaw-akademia-internetu-test3 copy.jpg" alt="Logo Wyższej szkoły bankowej"></a>
+    <a href="/"><img src="${pageContext.request.contextPath}/static/wsb.jpg" alt="Logo Wyższej szkoły bankowej"></a>
 </header>
 <nav class="navbar navbar-dark bg-primary navbar-expand-md">
     <a class="navbar-brand mr-8" href="/">WSB</a>
@@ -52,6 +52,14 @@
 </nav>
 <div class="container">
     <main class="row">
+        <!-- Buttons for login or registry -->
+        <sec:authorize access="!isAuthenticated()">
+            <div class="button-property home-page-buttons col-4 offset-4">
+                <a href="/register"><button  class="btn btn-primary btn-lg">Zarejestruj się</button></a>
+                <a href="/login"><button class="btn btn-success btn-lg button-login">Zaloguj</button></a>
+            </div>
+        </sec:authorize>
+
         <!-- Drawing column whit announcements -->
         <c:if test="${announcements} != null">
         <section class="col-8 offset-2 main">

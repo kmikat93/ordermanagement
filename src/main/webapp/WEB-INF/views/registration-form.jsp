@@ -21,7 +21,7 @@
     <a href="/"><img src="${pageContext.request.contextPath}/static/wsb.jpg" alt="Logo Wyższej szkoły bankowej"></a>
 </header>
 <nav class="navbar navbar-dark bg-primary navbar-expand-md">
-    <a class="navbar-brand mr-8" href="plTabUser.html">WSB - kieruj do home-page-logged</a>
+    <a class="navbar-brand mr-8" href="/">WSB - strona startowa</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-label="Przełącznik nawigacyjny" aria-expanded="false">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -33,7 +33,7 @@
 </nav>
 <div class="container">
     <main class="row">
-        <form action="home-page" method="POST" class="col-md-5 offset-md-3">
+        <form action="/" method="POST" class="col-md-5 offset-md-3">
             <h1 class="col-md-5 offset-md-3">Registration</h1>
             <div class="form-registration">
                 <label for="userName">Username:</label>
