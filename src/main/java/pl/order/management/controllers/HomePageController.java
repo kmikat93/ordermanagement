@@ -23,6 +23,7 @@ public class HomePageController {
     public String prepareHomePage(Model model){
         List<Announcement> allAnnouncementsOrderById = announcementRepository.findAllByOrderById();
 
+        //TODO You need to figure out how to rotate sorting so that the items are rearranged and how to change the date format
         model.addAttribute("announcements", allAnnouncementsOrderById);
 
         return "home-page";

@@ -28,7 +28,7 @@
             <ul class="navbar-nav ml-4 mr-auto">
                 <li class="nav-item"><a class="nav-link" href="/announcement"> Dodaj ogłoszenie</a></li>
                 <li class="nav-item active"><a class="nav-link" href="/add-order">Dodaj zamówienie</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Moje zamówienia</a></li>
+                <li class="nav-item"><a class="nav-link" href="/user-order">Moje zamówienia</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Zamówienia mojego działu</a></li>
             </ul>
             <ul class="navbar-nav ">
@@ -39,7 +39,7 @@
     </nav>
     <div class="container">
         <main class="row">
-            <form action="user-orders-page" method="POST" class="col-md-5 offset-md-3">
+            <form action="/add-order" method="POST" class="col-md-5 offset-md-3">
                 <div class="form-group">
                     <label for="title">Tytuł:</label>
                     <input type="text" class="form-control" id="title" name="title" placeholder="Tytuł">

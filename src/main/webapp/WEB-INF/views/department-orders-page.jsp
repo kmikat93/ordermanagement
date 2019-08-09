@@ -26,8 +26,8 @@
         <ul class="navbar-nav ml-4 mr-auto">
             <li class="nav-item"><a class="nav-link" href="/announcement"> Dodaj ogłoszenie</a></li>
             <li class="nav-item"><a class="nav-link" href="/add-order">Dodaj zamówienie</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Moje zamówienia</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Zamówienia mojego działu</a></li>
+            <li class="nav-item"><a class="nav-link" href="user-order">Moje zamówienia</a></li>
+            <li class="nav-item active"><a class="nav-link" href="#">Zamówienia mojego działu</a></li>
         </ul>
         <ul class="navbar-nav">
             <li class="nav-item "><a class="nav-link" href="#"> Zalogowany jest: </a></li>

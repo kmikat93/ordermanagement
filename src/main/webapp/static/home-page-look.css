@@ -17,12 +17,16 @@ body{
     padding: 1%;
 }
 
+.container{
+    margin-bottom: 5%;
+}
+
 .main{
     margin-top: 4%;
 }
 
 .home-page-buttons{
-    margin-top: 7%;
+    margin-top: 10%;
 }
 
 .button-login{
@@ -62,7 +66,6 @@ footer{
     height: 5%;
     background-color: #dededed0;
     padding: 2%;
-    margin-top: 5%;
     position: absolute;
     bottom: 0px;
 }

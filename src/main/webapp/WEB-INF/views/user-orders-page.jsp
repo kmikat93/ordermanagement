@@ -28,7 +28,7 @@
             <ul class="navbar-nav ml-4 mr-auto">
                 <li class="nav-item"><a class="nav-link" href="/announcement"> Dodaj ogłoszenie</a></li>
                 <li class="nav-item"><a class="nav-link" href="/add-order">Dodaj zamówienie</a></li>
-                <li class="nav-item active"><a class="nav-link" href="#">Moje zamówienia</a></li>
+                <li class="nav-item active"><a class="nav-link" href="/user-order">Moje zamówienia</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Zamówienia mojego działu</a></li>
             </ul>
             <ul class="navbar-nav">
@@ -51,21 +51,21 @@
                         <th class="table_heading">Data utworzenia</th>
                     </tr>
                 </thead>
-                <c:if test="${orders} != null">
+
                 <tbody>
-                    <c:forEach var="orders" items="${orders}">
+                    <c:forEach var="order" items="${orders}">
                         <tr class="table_rows">
-                            <td class="table_cell">${orders.id}</td>
-                            <td class="table_cell"><a href="#" class="table_title">${orders.title}</a></td>
-                            <td class="table_cell"><span class="table_description">${orders.description}</span></td>
-                            <td class="table_cell">${orders.status}</td>
-                            <td class="table_cell">${orders.userId}</td>
-                            <td class="table_cell">${orders.departmentId}</td>
-                            <td class="table_cell">${orders.dateTime}</td>
+                            <td class="table_cell">${order.getId()}</td>
+                            <td class="table_cell"><a href="#" class="table_title"><c:out value="${order.getTitle()}"/></a></td>
+                            <td class="table_cell"><span class="table_description"><c:out value="${order.getDescription()}"/></span></td>
+                            <td class="table_cell"><c:out value="${order.getStatus().getStatus()}"/></td>
+                            <td class="table_cell"><c:out value="${order.getUserId().getUsername()}"/></td>
+                            <td class="table_cell"><c:out value="${order.getDepartmentId().getDepartment()}"/></td>
+                            <td class="table_cell"><c:out value="${order.getDateTime()}"/></td>
                         </tr>
                     </c:forEach>
                 </tbody>
-                </c:if>
+
             </table>
         </main>
     </div>

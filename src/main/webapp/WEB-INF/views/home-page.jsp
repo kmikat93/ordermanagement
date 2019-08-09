@@ -28,11 +28,11 @@
     <div id="main-menu" class="collapse navbar-collapse">
 
         <!-- To co widzi użytkownik, gdy JEST sie zalogowanym -->
-        <!--<sec:authorize access="isAuthenticated()"> -->
+        <sec:authorize access="isAuthenticated()">
         <ul class="navbar-nav ml-4 mr-auto">
             <li class="nav-item"><a class="nav-link" href="/announcement"> Dodaj ogłoszenie</a></li>
             <li class="nav-item"><a class="nav-link" href="/add-order">Dodaj zamówienie</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Moje zamówienia</a></li>
+            <li class="nav-item"><a class="nav-link" href="/user-order">Moje zamówienia</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Zamówienia mojego działu</a></li>
         </ul>
         <ul class="navbar-nav">
@@ -61,22 +61,24 @@
         </sec:authorize>
 
         <!-- Drawing column whit announcements -->
-        <c:if test="${announcements} != null">
-        <section class="col-8 offset-2 main">
-            <c:forEach var="announcement" items="${announcements}">
-                <article class="article-advert">
-                    <div>
-                        <h6 class="article-title">${announcement.title} </h6>
-                        <p class="article-text">${announcement.description} </p>
-                    </div>
-                    <div class="article-sign">
-                        <cite class="font-weight-light sign">Kamil Janiak 12/02/2015</cite>
-                    </div>
-                    <hr>
-                </article>
-            </c:forEach>
-        </section>
-        </c:if>
+        <sec:authorize access="isAuthenticated()">
+
+                <section class="col-8 offset-2 main">
+                    <c:forEach var="announcement" items="${announcements}">
+                        <article>
+                            <div>
+                                <h6 class="article-title"><c:out value="${announcement.getTitle()}"/></h6>
+                                <p class="article-text"><c:out value="${announcement.getDescription()}"/></p>
+                            </div>
+                            <div class="article-sign">
+                                <cite class="font-weight-light sign"><c:out value="${announcement.getCreator().getUsername()}"/> <c:out value="${announcement.getCreated().toString()}"/></cite>
+                            </div>
+                            <hr>
+                        </article>
+                    </c:forEach>
+                </section>
+
+        </sec:authorize>
     </main>
 </div>
 <footer>
