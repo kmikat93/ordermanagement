@@ -16,6 +16,7 @@ import java.util.List;
 public class UserOrderController {
 
     private OrderRepository orderRepository;
+    private Principal principal;
 
     @Autowired
     public UserOrderController(OrderRepository orderRepository) {

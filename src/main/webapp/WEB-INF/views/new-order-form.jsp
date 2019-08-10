@@ -51,9 +51,9 @@
                 </div>
                 <div class="form-group">
                     <label for="departments">Dział:</label><br>
-                    <select name="departments" id="departments">
+                    <select name="department" id="departments">
                         <c:forEach items="${departments}" var="department">
-                            <option value="<c:out value="${department.id}"/> "><c:out value="${department.department}"/> </option>
+                            <option value="<c:out value="${department.id}"/> "><c:out value="${department.department}"/></option>
                         </c:forEach>
                     </select>
                 </div>

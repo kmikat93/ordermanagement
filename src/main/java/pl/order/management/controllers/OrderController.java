@@ -14,7 +14,9 @@ import pl.order.management.model.repositories.OrderRepository;
 import pl.order.management.model.repositories.StatusRepository;
 import pl.order.management.model.repositories.UserRepository;
 
+import javax.xml.crypto.Data;
 import java.security.Principal;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Controller
@@ -54,7 +56,7 @@ public class OrderController {
         order.setStatus(statusRepository.findStatusByStatus("Nowe"));
         order.setUserId(userRepository.findUserByUsername(userName));
         order.setDepartmentId(departmentRepository.findDepartmentByDepartments(department));
-
+        order.setDateTime(LocalDateTime.now());
         orderRepository.save(order);
 
         return "redirect:/";

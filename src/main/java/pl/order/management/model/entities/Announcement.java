@@ -2,6 +2,7 @@ package pl.order.management.model.entities;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 @Entity
@@ -19,9 +20,6 @@ public class Announcement{
     private LocalDateTime created;
     @ManyToOne
     private User creator;
-
-    //TODO geters, seters itd.
-
 
     public Long getId() {
         return id;
@@ -45,6 +43,11 @@ public class Announcement{
 
     public LocalDateTime getCreated() {
         return created;
+    }
+
+    public String getCreatedFormatted() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        return created.format(formatter);
     }
 
     public void setCreated(LocalDateTime created) {
@@ -83,5 +86,4 @@ public class Announcement{
         sb.append('}');
         return sb.toString();
     }
-
 }

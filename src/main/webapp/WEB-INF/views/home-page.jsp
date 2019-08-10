@@ -71,7 +71,7 @@
                                 <p class="article-text"><c:out value="${announcement.getDescription()}"/></p>
                             </div>
                             <div class="article-sign">
-                                <cite class="font-weight-light sign"><c:out value="${announcement.getCreator().getUsername()}"/> <c:out value="${announcement.getCreated().toString()}"/></cite>
+                                <cite class="font-weight-light sign"><c:out value="${announcement.getCreator().getUsername()}"/> <c:out value="${announcement.getCreatedFormatted()}"/></cite>
                             </div>
                             <hr>
                         </article>
