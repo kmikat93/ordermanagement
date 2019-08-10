@@ -33,7 +33,7 @@
                 <li class="nav-item"><a class="nav-link" href="#">Zamówienia mojego działu</a></li>
             </ul>
             <ul class="navbar-nav ">
-                <li class="nav-item "><a class="nav-link" href="#"> Zalogowany jest: </a></li>
+                <li class="nav-item "><a class="nav-link" href="#"> Zalogowany: </a></li>
                 <li class="nav-item "><a class="nav-link" href="/logout"> Wyloguj</a></li>
             </ul>
         </div>

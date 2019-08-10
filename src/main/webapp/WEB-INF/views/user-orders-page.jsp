@@ -32,7 +32,7 @@
                 <li class="nav-item"><a class="nav-link" href="#">Zamówienia mojego działu</a></li>
             </ul>
             <ul class="navbar-nav">
-                <li class="nav-item "><a class="nav-link" href="#"> Zalogowany jest: ${username}</a></li>
+                <li class="nav-item "><a class="nav-link" href="#"> Zalogowany: ${username}</a></li>
                 <li class="nav-item "><a class="nav-link" href="/logout"> Wyloguj</a></li>
             </ul>
         </div>
@@ -60,7 +60,7 @@
                             <td class="table_cell"><span class="table_description"><c:out value="${order.getDescription()}"/></span></td>
                             <td class="table_cell"><c:out value="${order.getStatus().getStatus()}"/></td>
                             <td class="table_cell"><c:out value="${order.getUserId().getUsername()}"/></td>
-                            <td class="table_cell"><c:out value="${order.getDepartmentId().getDepartment()}"/></td>
+                            <td class="table_cell"><c:out value="${order.getDepartmentId()}"/></td>
                             <td class="table_cell"><c:out value="${order.getDateTime()}"/></td>
                         </tr>
                     </c:forEach>
