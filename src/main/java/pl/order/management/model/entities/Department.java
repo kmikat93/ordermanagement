@@ -14,6 +14,7 @@ public class Department {
 
     public Department() {
     }
+
     public Department(String departments) {
         this.departments = departments;
     }
