@@ -2,6 +2,7 @@ package pl.order.management.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +15,7 @@ import pl.order.management.model.repositories.StatusRepository;
 import pl.order.management.model.repositories.UserRepository;
 
 import java.security.Principal;
+import java.util.List;
 
 @Controller
 @RequestMapping("/add-order")
@@ -33,7 +35,9 @@ public class OrderController {
     }
 
     @GetMapping
-    public String prepareNewOrderPage() {
+    public String prepareNewOrderPage(Model model){
+        List<Department> allDepartmentsOrderById = departmentRepository.findAllByOrderById();
+        model.addAttribute("departments", allDepartmentsOrderById);
         return "new-order-form";
     }
 

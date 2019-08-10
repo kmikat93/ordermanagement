@@ -25,9 +25,7 @@ public class HomePageController {
         List<Announcement> allAnnouncementsOrderById = announcementRepository.findAllByOrderById();
         Collections.reverse(allAnnouncementsOrderById);
 
-        //TODO You need to figure out how to rotate sorting so that the items are rearranged and how to change the date format
         model.addAttribute("announcements", allAnnouncementsOrderById);
-
         return "home-page";
     }
 }

@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="pl_PL">
@@ -51,11 +52,9 @@
                 <div class="form-group">
                     <label for="departments">Dział:</label><br>
                     <select name="departments" id="departments">
-                        <option value="Administracja wewnętrzna">Administracja wewnętrzna</option>
-                        <option value="Informatyka">Informatyka</option>
-                        <option value="Sprzątaczki">Sprzątaczki</option>
-                        <option value="Ważny woźny">Ważny woźny</option>
-                        <option value="Szef wszystkich szefów">Szef wszystkich szefów</option>
+                        <c:forEach items="${departments}" var="department">
+                            <option value="<c:out value="${department.id}"/> "><c:out value="${department.department}"/> </option>
+                        </c:forEach>
                     </select>
                 </div>
                 <div class="button-property">

@@ -32,10 +32,6 @@ public class RegistrationController {
         this.departmentRepository = departmentRepository;
     }
 
-
-
-
-
     @GetMapping
     public String prepareRegistrationPage(Model model){
         List<Department> allDepartmentsOrderById = departmentRepository.findAllByOrderById();

@@ -6,7 +6,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "announcements")
-public class Announcement implements Comparable {
+public class Announcement{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -84,17 +84,4 @@ public class Announcement implements Comparable {
         return sb.toString();
     }
 
-    //To sort List by Id
-    @Override
-    public int compareTo(Object o) {
-        Announcement sent = (Announcement) o;
-
-        if (this.getId() < sent.getId())
-            return -1;
-        if (this.getId() > sent.getId())
-            return 1;
-
-        return 0;
-
-    }
 }
