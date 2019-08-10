@@ -34,21 +34,21 @@
 <div class="container">
     <main class="row">
         <form action="/" method="POST" class="col-md-5 offset-md-3">
-            <h1 class="col-md-5 offset-md-3">Registration</h1>
+            <h1 class="col-md-5 offset-md-3">Rejestracja</h1>
             <div class="form-registration">
-                <label for="userName">Username:</label>
+                <label for="userName">Nazwa użytkownika:</label>
                 <input type="text" class="form-control" id="userName" name="userName" placeholder="">
             </div>
             <div class="form-registration">
-                <label for="password">Password:</label>
+                <label for="password">Hasło:</label>
                 <input type= "password" class="form-control" id="password" name="password" placeholder="">
             </div>
             <div class="form-registration">
-                <label for="firstName">First Name:</label>
+                <label for="firstName">Imię:</label>
                 <input class="form-control" id="firstName" name="firstName" placeholder="">
             </div>
             <div class="form-registration">
-                <label for="lastName">Last Name:</label>
+                <label for="lastName">Nazwisko:</label>
                 <input class="form-control" id="lastName" name="lastName" placeholder="">
             </div>
             <div class="form-registration">
@@ -57,27 +57,24 @@
             </div>
             <div class="form-registration">
                 <!--<style="min-width: 100%"> -->
-                <label for="departments">Department:</label>
+                <label for="departments">Dział:</label>
                 <br>
                 <select name="departments" id="departments">
                     <c:forEach items="${departments}" var="department">
-                          <!--tu będzie gunwo -->
+                        <option value="${department.id}">${department.department}</option>
                     </c:forEach>
                 </select>
                 <div class="form-registration">
                     <!--<style="min-width: 100%"> -->
-                    <label for="position">Position:</label>
-                    <select name="position" id="position">
-                        <option value="Empty"></option>
-                        <option value="Tough stuff">Boss of them all</option>
-                        <option value="Omfg don't even think bout it">Too tired to get up</option>
-                        <option value="Yhm in your dreams mate, i'm a single mom">Yhm in your dreams mate</option>
-                        <option value="i'm a single mom">i'm a single mom</option>
-                    </select>
+                    <label for="positions">Stanowisko:</label>
+                    <select name="positions" id="positions">
+                        <c:forEach items="${positions}" var="position">
+                            <option value="${position.id}">${position.positions}</option>
+                        </c:forEach>
                 </div>
                 <div class="button-property">
-                    <button type="submit" class="btn btn-primary button-submit">Sumbit</button>
-                    <button type="reset" class="btn btn-secondary">Reset</button>
+                    <button type="submit" class="btn btn-primary button-submit">Wyślij</button>
+                    <button type="reset" class="btn btn-secondary">Wyczyść</button>
                 </div>
             </div>
             <sec:csrfInput/>

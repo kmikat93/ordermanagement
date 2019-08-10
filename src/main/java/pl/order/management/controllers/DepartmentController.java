@@ -20,20 +20,17 @@ public class DepartmentController {
     }
 
     @GetMapping
-    public String processDepartmentAddPage(){
+    public String processDepartmentAddPage() {
         return "add-department";
     }
 
     @PostMapping
-    public String addDepartment(String name){
+    public String addDepartment(String name) {
 
         Department department = new Department();
-
         department.setDepartment(name);
-
         departmentRepository.save(department);
-
         return "redirect:/";
-    }
 
+    }
 }

@@ -1,6 +1,5 @@
 package pl.order.management.model.entities;
 
-import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 

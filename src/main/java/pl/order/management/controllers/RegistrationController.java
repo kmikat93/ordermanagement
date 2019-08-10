@@ -39,8 +39,9 @@ public class RegistrationController {
     @GetMapping
     public String prepareRegistrationPage(Model model){
         List<Department> allDepartmentsOrderById = departmentRepository.findAllByOrderById();
+        List<Position> position =positionRepository.findAllByOrderById();
         model.addAttribute("departments", allDepartmentsOrderById);
-
+        model.addAttribute("positions", position);
         return "registration-form";
     }
 

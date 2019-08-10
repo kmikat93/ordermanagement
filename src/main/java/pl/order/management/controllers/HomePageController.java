@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import pl.order.management.model.entities.Announcement;
 import pl.order.management.model.repositories.AnnouncementRepository;
 
+import java.util.Collections;
 import java.util.List;
 
 @Controller
@@ -22,6 +23,7 @@ public class HomePageController {
     @GetMapping
     public String prepareHomePage(Model model){
         List<Announcement> allAnnouncementsOrderById = announcementRepository.findAllByOrderById();
+        Collections.reverse(allAnnouncementsOrderById);
 
         //TODO You need to figure out how to rotate sorting so that the items are rearranged and how to change the date format
         model.addAttribute("announcements", allAnnouncementsOrderById);
